@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <div>
+        <input id="studentName" placeholder="Enter Student Name">
+        <input id="studentUsername" placeholder="Enter Username">
+        <input id="studentId" placeholder="Enter Student ID">
+        <input id="studentDob" placeholder="Enter Date of Birth">
+    </div>
+    <button onclick="insert()">Insert Info</button>
+
+    <div id="demo_div"></div>
+    <h1 id="h_name"></h1>
+    <button onclick="show_all_students()">Show Info</button>
+
+    <div id="info_div"></div> 
+
+    <script>
+        const students = [];
+
+        function Student(name, username, id, dob){
+            this.name= name;
+            this.username=username;
+            this.id = id;
+            this.dob= dob;
+        }
+
+        function insert() {
+            const student = {
+                name: document.getElementById("studentName").value,
+                username: document.getElementById("studentUsername").value,
+                id: document.getElementById("studentId").value,
+                dob: document.getElementById("studentDob").value,
+                description: function() {
+                    return "Hello, my name is " + this.name + ". My username is " + this.username + ". My student ID is " + this.id + ". I was born on " + this.dob + ".";
+                }
+            };
+            students.push(student);
+            displayStudentInfo(student);
+        }
+
+        function displayStudentInfo(student) {
+            document.getElementById("demo_div").innerHTML = student.description();
+            document.getElementById("h_name").innerHTML = student.name;
+        }
+
+        function show_all_students() {
+            let allInfo = "Student Info:<br>";
+            students.forEach(student => {
+                allInfo += student.description() + "<br>";
+            });
+            document.getElementById("info_div").innerHTML = allInfo;
+        }
+    </script>
+</body>
+</html>

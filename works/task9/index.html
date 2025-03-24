@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script src="script.js"></script>
+        <script>
+            function update(){
+    let score = parseFloat(document.getElementById("input").value);
+    let grade = "";
+    if(score >= 80){
+        grade = "A";
+    }else if(score >=60 && score <=79){
+        grade = "B";
+    }else if(score>=40 && score <=59){
+        grade = "C";
+    }else if(score >=0 && score <=39){
+        grade = "F";
+    }
+    document.getElementById("grade_span").innerHTML = grade
+ }
+        </script>
+    </head>
+
+    <body>
+        <div class="input_div">
+            <h3>Heading Scale</h3>
+            <input placeholder="Enter score here" id = "input"onkeyup="update()"/>
+            Your grade is: <span id= "grade_span"></span>
+
+        </div>    
+    </body>
+</html>
+

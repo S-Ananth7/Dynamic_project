@@ -1,0 +1,58 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scripts.js"></script>
+    <script>
+        let taskStack = [];
+ function add_task() {
+    const taskInput = document.getElementById("task_input");
+    const taskName = taskInput.value.trim();
+    if (taskName !== "") {
+        taskStack.push(taskName);  
+        taskInput.value = "";  
+        updatePipeline();  
+    } else {
+        alert("Please enter a task name.");
+    }
+ }
+ function undo_task() {
+    if (taskStack.length > 0) {
+        taskStack.pop();  
+        updatePipeline();  
+    } else {
+        alert("No tasks to undo.");
+    }
+ }
+ function updatePipeline() {
+    const taskList = document.getElementById("task_list");
+    taskList.innerHTML = "";  
+    taskStack.forEach(task => {
+        const li = document.createElement("li");
+        li.textContent = task;
+        taskList.appendChild(li);
+    });
+ }
+    </script>
+    
+</head>
+<body>
+
+    <div>
+        <input type="text" id="task_input" placeholder="Enter Task Name" />
+        <button onclick="add_task()">Add Task</button>
+        <button onclick="undo_task()">Undo Task</button>
+    </div>
+
+    <div id="div1">
+        <h2>Process Line</h2>
+        <ul id="task_list"></ul>
+    </div>
+
+    
+</body>
+</html>
+

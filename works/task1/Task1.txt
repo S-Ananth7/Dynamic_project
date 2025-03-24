@@ -1,0 +1,26 @@
+Write an essay on your expectations from this course. It can include but is not limited to) the following:
+
+
+Why do you want to take this course?
+1.)I want to take this course because I've recently learned frontend technologies basics, and now I want to expand my skills further. I believe this course will help me learn new concepts and improve my abilities, which will ultimately help me secure a good job.
+
+What do you aim to learn by the end of this course?
+2.)By the end of this course, I aim to learn new technologies and improve my existing skills. I want to be able to build more advanced and efficient projects, which will help me become more confident in my abilities.
+
+How do you think this course will benefit you in your future goals?
+3.)I think this course will benefit me by helping me gain the knowledge and skills needed to take on more challenging projects. It will make me more easy in the job market and improve my chances of landing a better job and advancing in my career.
+
+List any specific tools you want to learn (like Tailwind or React etc.)
+4.)list of tools I want to learn:
+React
+Tailwind CSS
+Node.js
+Express.js
+MongoDB
+Git & GitHub
+JavaScript
+TypeScript
+Next.js
+GraphQL
+
+These tools will help me become a better developer and build stronger web applications.

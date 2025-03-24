@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        
+
+    </style>
+
+</head>
+<body>
+    <input type="number" id="inputNumber" placeholder="Enter a positive Number" oninput="generateTriPattern()" > 
+    <div id="output"></div>
+
+    <script>
+        const colors = ["red", "green", "blue", "orange"];
+        let idx=0;
+
+        function generateTriPattern() {
+            let num = parseInt(document.getElementById("inputNumber").value);
+            let output = "";
+            for (let i = 1; i <= num; i++) {
+                for (let j = 1; j <= i; j++) {
+                    output += "* ";
+                }
+                output += "<br>";
+            }
+        document.getElementById("output").innerHTML = output;
+        document.getElementById("output").style = "color: " + colors[idx];
+        idx = (idx + 1) % colors.length;
+    }
+</script>
+   
+    
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Project Gallery</title>
+    <script>function loadTask(taskId) {
+        const works = {
+            "task1": { "title": "Project 1", "url": "task16p/task16_1/index.html" },
+            "task2": { "title": "Project 2", "url": "task16p/task16_2/index.html" },
+            "task3": { "title": "Project 3", "url": "task16p/task16_3/index.html" },
+        };
+    
+        
+        if (works[taskId]) {
+            document.getElementById("workFrame").src = works[taskId].url;
+            document.getElementById("workFrame").title = works[taskId].title; 
+        } else {
+            alert("Task not found!");
+            document.getElementById("workFrame").src = ""; 
+            document.getElementById("workFrame").title = "Select a project";
+        }
+    }
+    </script>
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    font-family: Arial, sans-serif;
+}
+.container {
+    width: 80%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.class_works {
+    text-align: center;
+    padding: 20px;
+    background: #1e3c72;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.nav-panel {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background: #f4f4f4;
+}
+.nav-panel button {
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 0 15px;
+    transition: background 0.3s, transform 0.2s;
+    background: #2575fc;
+    color: white;
+    font-weight: bold;
+}
+.nav-panel button:hover {
+    background: #6a11cb;
+    transform: scale(1.1);
+}
+.content-display {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #ffffff;
+    transition: all 0.5s ease-in-out;
+}
+iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+}
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        
+        <div class="class_works">
+            <h1>Class Works</h1>
+        </div>
+
+        
+        <div class="nav-panel">
+            <button onclick="loadTask('task1')">Project 1</button>
+            <button onclick="loadTask('task2')">Project 2</button>
+            <button onclick="loadTask('task3')">Project 3</button>
+        </div>
+
+       
+        <div class="content-display">
+            <iframe id="workFrame" src="task16p/landing.html" title="Select a project">Select a project</iframe>
+        </div>
+    </div>
+
+    
+    
+</body>
+</html>

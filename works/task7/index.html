@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo_div"></div>
+
+    <script>
+        let x = 10;
+        let y = x + 5;
+        let z = x - y;
+        let a = x * y;
+        let d = 20;
+        let sum = x + y;
+        let difference = x - d;
+        let product = y * d;
+        let quotient = a / y;
+        let remainder = d % x;
+
+        let output = `
+            x = ${x}<br>
+            y = ${y}<br>
+            z = ${z}<br>
+            a = ${a}<br>
+            d = ${d}<br>
+            sum = ${sum}<br>
+            difference = ${difference}<br>
+            product = ${product}<br>
+            quotient = ${quotient}<br>
+            remainder = ${remainder}
+        `;
+
+        document.getElementById('demo_div').innerHTML = output;
+    </script>
+</body>
+</html>

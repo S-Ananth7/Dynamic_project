@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Task Instructions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #4a90e2;
+            text-align: center;
+        }
+
+        .steps {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .step {
+            margin-bottom: 20px;
+        }
+
+        .step h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            margin: 5px 0;
+        }
+
+        .code {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: "Courier New", monospace;
+            margin: 10px 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>GitHub Task Instructions</h1>
+
+    <div class="steps">
+        <!-- Step 1 -->
+        <div class="step">
+            <h2>Step 1: Create and Set Up Your GitHub Account</h2>
+            <p>Go to <a href="https://github.com" target="_blank">GitHub</a> and sign up for a new account if you don’t already have one.</p>
+            <p>Verify your email address and complete the setup process.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step">
+            <h2>Step 2: Create a New Repository</h2>
+            <p>Log in to your GitHub account.</p>
+            <p>Click the <strong>+</strong> icon in the top-right corner and select <strong>New repository</strong>.</p>
+            <p>Name your repository (e.g., <code>Class_Assignments_FET</code>).</p>
+            <p>Choose <strong>Public</strong> (or <strong>Private</strong> if you prefer).</p>
+            <p>Optionally, add a README file, <code>.gitignore</code>, and license.</p>
+            <p>Click <strong>Create repository</strong>.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step">
+            <h2>Step 3: Collaborate with the Provided Repository</h2>
+            <p>Go to the repository you want to collaborate with: <a href="https://github.com/aum-web-app" target="_blank">aum-web-app</a>.</p>
+            <p>Fork the repository to your GitHub account by clicking the <strong>Fork</strong> button.</p>
+            <p>Clone the forked repository to your local machine:</p>
+            <div class="code">
+                git clone https://github.com/your-username/aum-web-app.git
+                cd aum-web-app
+            </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step">
+            <h2>Step 4: Pull the Repository to Your Local Machine</h2>
+            <p>If you created a new repository, clone it to your local machine:</p>
+            <div class="code">
+                git clone https://github.com/your-username/Class_Assignments_FET.git
+                cd Class_Assignments_FET
+            </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step">
+            <h2>Step 5: Create a Branch for Task 5 (Calculator Assignment)</h2>
+            <p>Create a new branch for Task 5:</p>
+            <div class="code">
+                git checkout -b task5_calc_assg
+            </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="step">
+            <h2>Step 6: Copy Task 5 (Calculator) Files</h2>
+            <p>Copy the Task 5 files into your local repository.</p>
+        </div>
+
+        <!-- Step 7 -->
+        <div class="step">
+            <h2>Step 7: Stage and Commit Changes</h2>
+            <p>Stage all changes:</p>
+            <div class="code">
+                git add .
+            </div>
+            <p>Commit the changes with a message:</p>
+            <div class="code">
+                git commit -m "Added Task 5 Calculator Assignment"
+            </div>
+        </div>
+
+        <!-- Step 8 -->
+        <div class="step">
+            <h2>Step 8: Push Changes to Remote</h2>
+            <p>Push the changes to the remote repository:</p>
+            <div class="code">
+                git push origin task5_calc_assg
+            </div>
+        </div>
+
+        <!-- Step 9 -->
+        <div class="step">
+            <h2>Step 9: Make a Pull Request</h2>
+            <p>Go to your GitHub repository and create a pull request for the <code>task5_calc_assg</code> branch.</p>
+            <p>Wait for the pull request to be reviewed and merged.</p>
+        </div>
+
+        <!-- Step 10 -->
+        <div class="step">
+            <h2>Step 10: Submit Repository URL and Commit ID</h2>
+            <p>Submit your repository URL and the commit ID for the Task 5 merge in Canvas.</p>
+        </div>
+
+        <!-- Step 11 -->
+        <div class="step">
+            <h2>Step 11: Checkout to the Master Branch</h2>
+            <p>Switch back to the <code>main</code> branch:</p>
+            <div class="code">
+                git checkout main
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 GitHub Task Instructions. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

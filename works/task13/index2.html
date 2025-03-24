@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <h1>JavaScript Statements</h1>
+    <div id="demo_div"></div>
+    <button id="infoButton" onclick="show_person_info()">Click me</button>
+    <script>
+        const person = {
+            name: "asurampu",
+            color: "White",
+            age: "24",
+            year: "2000",
+            studentId: "s00445119",
+            description: function(){
+                return "My name is " + this.name + ". I am " + this.age + " years old, born in the year " + this.year + ". My color is " + this.color + ". My student ID is " + this.studentId + ".";
+            }
+        };
+        function show_person_info(){
+            document.getElementById("demo_div").innerHTML = person.description();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Student Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #student_info {
+            text-align: center;
+            color: red;
+            background-color: rgb(240, 225, 225);
+    
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            width: 250px;
+            border: 1px solid silver;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .insert-btn {
+            background-color: green;
+            color: white;
+        }
+
+        .show-btn {
+            background-color: green;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+
+        .clr_btn{
+            background-color: red;
+            color: white;
+
+        }
+
+        .clr_display{
+            background-color: red;
+            color: white;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="student_info">
+        <h2>Student Information</h2>
+    </div>
+    <div>
+        <input id="studentName" placeholder="Enter Student Name">
+        <input id="studentUsername" placeholder="Enter Username">
+        <input id="studentId" placeholder="Enter Student ID">
+        <input id="studentDob" placeholder="Enter Date of Birth">
+        <input id="studentEmail" placeholder="Enter Email">
+    </div>
+    
+    <button onclick="insert()" class="insert-btn">Insert Info</button>
+    <button onclick="show_all_students()" class="show-btn">Show All</button>
+    <button onclick="Clear_Inputs()" class="clr_btn">Clear Inputs</button>
+    <button onclick="Clear_Display()" class="clr_display">Clear Display</button>
+    <div>
+        <input id="searchInput" placeholder="Search Student by Name" onkeyup="searchStudent()">
+    </div>
+    <h1 id="h_name"></h1>
+    <div id="info_div"></div>
+    <script>
+        let students = [];
+
+        function Student(name, username, id, dob, email) {
+            this.name = name;
+            this.username = username;
+            this.id = id;
+            this.dob = dob;
+            this.email = email;
+            this.describe = function() {
+                return "Hello, my name is " + this.name + ". My username is " + this.username + ". My student ID is " + this.id + ". I was born on " + this.dob + ". My email is " + this.email + ".";
+            };
+        }
+
+        function insert() {
+            let name = document.getElementById("studentName").value;
+            let username = document.getElementById("studentUsername").value;
+            let id = document.getElementById("studentId").value;
+            let dob = document.getElementById("studentDob").value;
+            let email = document.getElementById("studentEmail").value;
+
+            let new_student = new Student(name, username, id, dob, email);
+            students.push(new_student);
+            alert("Student Information Inserted Successfully!");
+        }
+
+        function show_all_students() {
+            let allInfo = "Student Info:<br>";
+            students.forEach(student => {
+                allInfo += student.description() + "<br>";
+            });
+            document.getElementById("info_div").innerHTML = allInfo;
+        }
+
+        function Clear_Inputs() {
+            document.getElementById("studentName").value = '';
+            document.getElementById("studentUsername").value = '';
+            document.getElementById("studentId").value = '';
+            document.getElementById("studentDob").value = '';
+            document.getElementById("studentEmail").value = '';
+        }
+
+        function Clear_Display() {
+            document.getElementById("info_div").innerHTML = '';
+        }
+
+        function searchStudent() {
+            let searchQuery = document.getElementById("searchInput").value.toLowerCase();
+            let filteredStudents = students.filter(student => student.name.toLowerCase().includes(searchQuery));
+            let searchResults = "Search Results:<br>";
+
+            if (filteredStudents.length > 0) {
+                filteredStudents.forEach(student => {
+                    searchResults += student.describe() + "<br>";
+                });
+            } else {
+                searchResults = "No students found matching the search.";
+            }
+            document.getElementById("info_div").innerHTML = searchResults;
+        }
+    </script>
+</body>
+</html>

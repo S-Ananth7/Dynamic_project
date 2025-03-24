@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <div id = "container_div">
+    <input placeholder="Enter Min Range" id="input_a"  >
+    <input placeholder="Enter Max Range" id="input_b"  >
+    <button onclick="Generate_random_num()"  >Generate Random Number</button>
+    <div id="output_div"></div>
+    </body>
+    </div>
+
+    <script>
+    function Generate_random_num(){
+        let min_val = parseInt(document.getElementById("input_a").value);
+        let max_val = parseInt(document.getElementById("input_b").value);
+        let random_value = Math.floor(Math.random() * (max_val - min_val + 1)) + min_val;
+
+        document.getElementById("output_div").innerHTML = random_value;
+    }
+
+    function clear_everything() {
+        document.getElementById("container_div").innerHTML="<h1>Vanished!!</h1>";
+    }
+    
+    setInterval(clear_everything,4300);
+    
+
+    </script>
+</body>
+</html>

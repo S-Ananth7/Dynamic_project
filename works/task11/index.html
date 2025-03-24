@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+    function generateTriPattern() {
+        let num = parseInt(document.getElementById("inputNumber").value);
+        let output = "";
+        for (let i = 1; i <= num; i++) {
+            for (let j = 1; j <= i; j++) {
+                output += "* ";
+            }
+            output += "<br>";
+        }
+        document.getElementById("output").innerHTML = output;
+    }
+</script>
+</head>
+<body>
+    <input type="number" id="inputNumber" placeholder="Enter a positive Number" min="1" oninput="generateTriPattern()" > 
+    <div id="output"></div>
+    
+    
+</body>
+</html>

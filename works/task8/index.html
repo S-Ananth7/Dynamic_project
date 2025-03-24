@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function generate() {
+                let text = document.getElementById("input_field").value;
+                let outputText = text.toUpperCase();
+                document.getElementById("output").value = outputText;
+            }
+        </script>
+    </head>
+    <body>
+        <input id="input_field" placeholder="Input text" onkeyup="generate();" />
+        <input id="output" placeholder="output text" disabled />
+    </body>
+</html>
